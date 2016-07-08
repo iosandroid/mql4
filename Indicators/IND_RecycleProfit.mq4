@@ -3,6 +3,13 @@
 #property indicator_color1 Red
 #property indicator_width1 1
 
+#include "..\Include\UpdateHistory2.mqh"
+
+
+
+
+
+
 #define MAX_AMOUNTSYMBOLS 15
 #define MAX_POINTS 100000
 
@@ -20,11 +27,11 @@ string Symbols[MAX_AMOUNTSYMBOLS];
 double BaseMatrix[][MAX_POINTS];
 double Means[], Vars[], SVector[];
 int Times[MAX_POINTS];
-double Recycles[];
+double Recycles[MAX_POINTS];
 int AmountSymbols, MatrixRows;
 double Vectors[][MAX_POINTS];
 int StartTime;
-double Data[];
+double Data[MAX_POINTS];
 double Lots[], Spreads[], TickValues[];
 
 string IndName = "RecycleProfit";
@@ -174,7 +181,11 @@ void GetBaseMatrix()
   while (CurrTime < Time[0])
   {
     for (i = 0; i < AmountSymbols; i++)
+    {
       BaseMatrix[i][MatrixRows] = GetPrice(Symbols[i], CurrTime);
+    }
+
+    //Print("MatrixRows: " + MatrixRows);
 
     Times[MatrixRows] = CurrTime;
 
@@ -221,7 +232,7 @@ void GetMarket( int Pos )
 
   Tmp /= Margin;
 
-  for (i = 0; i < AmountSymbols; i++)
+  for (int i = 0; i < AmountSymbols; i++)
     Lots[i] /= Tmp;
 
   return;
@@ -237,6 +248,8 @@ void GetData( string FileName )
 
   while (FileTell(handle) < FileSize(handle))
   {
+    //Print("i = " + i);
+  
     Times[i] = FileReadInteger(handle);
     Recycles[i] = FileReadDouble(handle);
     FileReadDouble(handle); // Divs[i]
@@ -282,16 +295,16 @@ void init()
 
   StartTime = GetStartTime(UName + ".dat");
 
-  GetBaseMatrix();
+  //GetBaseMatrix();
 
-  ArrayResize(Recycles, MatrixRows);
-  ArrayResize(Times, MatrixRows);
+  //ArrayResize(Recycles, MatrixRows);
+  //ArrayResize(Times, MatrixRows);
 
-  ArrayResize(Data, MatrixRows);
+  //ArrayResize(Data, MatrixRows);
 
-  GetData(UName + ".dat");
+  //GetData(UName + ".dat");
 
-  return(TRUE);
+  //return(TRUE);
 }
 
 int GetTimePos( int SearchTime )
@@ -363,7 +376,24 @@ void Check()
   {
     PrevEndInterval = EndInterval;
 
+    ////////
+    if (!UpdateHistory2())
+    {
+      Alert("ERROR: History not updated.");
+    }
+    
+    GetBaseMatrix();
+
+    //ArrayResize(Recycles, MatrixRows);
+    //ArrayResize(Times, MatrixRows);
+
+    //ArrayResize(Data, MatrixRows);
+ 
+    GetData(UName + ".dat");
+    /////////
+
     Pos = GetTimePos(EndInterval);
+    Print("Pos = " + Pos + " EndInterval: " + EndInterval + " MatrixRows: " + MatrixRows);
 
     GetMarket(Pos);
 

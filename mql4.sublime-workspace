@@ -20,11 +20,11 @@
 			}
 		},
 		{
-			"file": "Scripts/sample.mq4",
+			"file": ".git/info/exclude",
 			"settings":
 			{
-				"buffer_size": 4753,
-				"line_ending": "Windows"
+				"buffer_size": 270,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -63,6 +63,7 @@
 	],
 	"file_history":
 	[
+		"/C/Program Files (x86)/MetaTrader - FXOpen/MQL4/Scripts/sample.mq4",
 		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/nationsTree/model/NationsTreeModel.as",
 		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/core/api/service/Response.as",
 		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/data/ivo/compound/PlaneData.as",
@@ -265,29 +266,27 @@
 				},
 				{
 					"buffer": 1,
-					"file": "Scripts/sample.mq4",
+					"file": ".git/info/exclude",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4753,
+						"buffer_size": 270,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								736,
-								736
+								263,
+								263
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 3,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 85.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

@@ -12,10 +12,10 @@
 #define MAX_AMOUNTSYMBOLS 15
 #define MAX_POINTS 100000
 
-extern string SymbolsStr = "USDRUB, XBRUSD";
+extern string SymbolsStr = "USDRUB, GBPUSD";
 extern bool SymbolKoef = FALSE;
 extern bool Correlation = FALSE;
-extern int Depth = 288;
+extern int Depth = 1440;
 extern int Method = 4;
 extern int Height = 300;
 extern int BarStep = 36;
