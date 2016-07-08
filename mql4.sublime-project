@@ -1,0 +1,26 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"file_exclude_patterns": ["*.rar", "Files/", "Images/", "Libraries/", "Logs/", "Presets/", "Projects/", "*.dat", ".git/", "MQL4/mql4.sublime-project"],
+		},
+		{
+			"path": "Include",
+			"file_exclude_patterns": ["*.ex4", ".dat", "Controls/res/*.bmp"],
+			"folder_exclude_patterns": ["Controls/res/"]
+		},
+		{
+			"path": "Scripts",
+			"file_exclude_patterns": ["*.ex4", ".dat"],
+		},
+		{
+			"path": "Indicators",
+			"file_exclude_patterns": ["*.ex4", ".dat"],
+		},
+		{
+			"path": "Experts",
+			"file_exclude_patterns": ["*.ex4", ".dat"],
+		},
+	]
+}

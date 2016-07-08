@@ -1,0 +1,457 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"plane",
+				"planeId"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "mql4.sublime-project",
+			"settings":
+			{
+				"buffer_size": 587,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Scripts/sample.mq4",
+			"settings":
+			{
+				"buffer_size": 4753,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+	],
+	"file_history":
+	[
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/nationsTree/model/NationsTreeModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/core/api/service/Response.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/data/ivo/compound/PlaneData.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/data/ivo/generated/PlaneDynamicDataPackPlaneIVO.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/account/model/PreferencesModel.as",
+		"/C/Program Files (x86)/MetaTrader - FXOpen/MQL4/.git/info/exclude",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/account/model/planes/PlanesModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/shop/model/planes/ShopPlanesModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/vo/PlaneVO.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/data/base/CompoundVO.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/carousel/component/states/PlaneState.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/account/model/hangar/squad/SquadAutoFindModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/achievements/AchievementsModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/data/base/AutoIVO.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/shop/view/planes/sell/ShopSellPlaneManagement.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/modulesTree/view/ModuleTreeRightPanel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/model/carousel/CarouselModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/modulesTree/view/ModulesTreeView.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/modulesTree/viewModel/ModuleTreeLeftPanelViewModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/modulesTree/view/ModuleTreeLeftPanel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/data/ivo/generated/StatusPlaneIVO.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/controls/infoWindows/PlaneInfoWindow.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/coupons/models/proxies/DiscountsCouponsProxy.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/carousel/popup/PlaneBaseInfotip.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/shop/view/planes/renderers/PlaneStallListItemRenderer.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/shop/view/planes/renderers/PlaneStorageListItemRenderer.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/shop/view/planes/buy/ShopBuyRentPremiumPlaneManagement.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/crew/views/mediators/MemberSmallContextMenuMediator.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/shop/viewModel/planes/ShopPlanesListViewModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/data/ivo/generated/StatusBombIVO.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/customization/view/CustomizationWindow.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/shop/view/planes/buy/ShopRentPremiumPlaneManagement.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/equiment/view/EquipmentContextMenu.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/customization/view/components/TotalCost.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/viewModel/carousel/CarouselVM.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/viewModel/carousel/cells/CarouselPlaneVM.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/carousel/popup/CarouselPlaneInfoTip.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/shop/viewModel/planes/ShopPlanesStallViewModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/shop/viewModel/planes/vo/ShopPlaneVO.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/shop/viewModel/planes/ShopPlanesStorageViewModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/account/model/AccountModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/controls/RentTime.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/customization/model/vo/CamouflageVO.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/account/model/hangar/mode/PVEModeModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/account/model/hangar/mode/HeaderModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/view/CharacteristicsHeader.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/viewModel/carousel/filters/PrimaryFilter.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/customization/viewModel/CustomizationViewModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/customization/view/renderers/CamouflageItemRenderer.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/hangar/customization/model/CustomizationModel.as",
+		"/D/dev/hammer/depot/branches/technical/client_common/game/hammer/src/source_AS3/wowp/RootDomainClasses.as"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"PlaneModel.as",
+			"",
+			"PlaneData.as",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"ExternalInterface",
+			"isBought",
+			"fireUpdate",
+			"_RENT_CONF_ATTRIBUTES",
+			"PlaneData",
+			"statusPlaneStatus",
+			"PlaneData",
+			"_dataPack",
+			"_requiredAttributes",
+			"onDataPack",
+			"_dataPack",
+			"statusPlaneStatus",
+			"buySlot",
+			"requestBuyPlane",
+			".PLANE_STATUS_BOUGHT",
+			"isBought",
+			"_dataPack",
+			"_dataPack.status",
+			"isBought",
+			"RENT_PLANE",
+			"response",
+			"_responseCallbackFunctionName",
+			"();\n",
+			"RENT_PLANE",
+			"sendRequest",
+			"start",
+			"response",
+			"queryParam",
+			"edit",
+			"queryParam",
+			"query",
+			"_requestArguments",
+			"RENT_PLANE",
+			"RENT",
+			"PlaneData.PLANE_STATUS_BOUGHT",
+			" _dataPack.status",
+			"isBought",
+			"expiryTimeWithDelta",
+			"isRentExpired",
+			"_planeStatus",
+			"StatusPlaneIVO",
+			"IStatus",
+			"isRentExpired",
+			"rent",
+			"RENT",
+			"STATUS",
+			"IStatus",
+			"isRentExpired",
+			"get rentRemaining",
+			"get isRentExpired",
+			"get isRentExpired()",
+			"function get isRentExpired()",
+			"public function get isRentExpired()",
+			"_planeCrew",
+			"isBought",
+			"_ADDITIONAL_ATTRIBUTES",
+			"_planeCrew",
+			"rentRemaining",
+			"isRentExpired",
+			"isRentExpiried",
+			"mcBuySlotCost",
+			"isRentExpired",
+			"accountPlaneUpdate",
+			"planesModel",
+			"expiryTimeWithDelta",
+			"expiryTime",
+			"public function set ",
+			"expiryTime",
+			"RENT_PLANE",
+			"expiryTime",
+			"RENT_PLANE",
+			"expiryTime",
+			"RENT_PLANE",
+			"expiryTime",
+			"isRentExpired",
+			"trace",
+			"expiryTime",
+			");\n",
+			"\n						"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "mql4.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 587,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								168,
+								168
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Scripts/sample.mq4",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4753,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								736,
+								736
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 85.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "mql4.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"sample",
+				"Scripts\\sample.mq4"
+			],
+			[
+				"planed",
+				"data\\ivo\\generated\\PlaneDynamicDataPackPlaneIVO.as"
+			],
+			[
+				"compo",
+				"data\\base\\CompoundVO.as"
+			],
+			[
+				"auto",
+				"data\\base\\AutoIVO.as"
+			],
+			[
+				"planedynami",
+				"data\\ivo\\generated\\PlaneDynamicDataPackPlaneIVO.as"
+			],
+			[
+				"requ",
+				"core\\api\\service\\Request.as"
+			],
+			[
+				"shopsellplane",
+				"hangar\\shop\\view\\planes\\sell\\ShopSellPlaneManagement.as"
+			],
+			[
+				"planemodel",
+				"account\\model\\planes\\PlanesModel.as"
+			],
+			[
+				"moduletreeri",
+				"hangar\\modulesTree\\view\\ModuleTreeRightPanel.as"
+			],
+			[
+				"planev",
+				"hangar\\vo\\PlaneVO.as"
+			],
+			[
+				"shopse",
+				"hangar\\shop\\view\\planes\\sell\\ShopSellPlaneManagement.as"
+			],
+			[
+				"shopbuyren",
+				"hangar\\shop\\view\\planes\\buy\\ShopBuyRentPremiumPlaneManagement.as"
+			],
+			[
+				"planesm",
+				"account\\model\\planes\\PlanesModel.as"
+			],
+			[
+				"planesmo",
+				"account\\model\\planes\\PlanesModel.as"
+			],
+			[
+				"accountm",
+				"account\\model\\AccountModel.as"
+			],
+			[
+				"accountmo",
+				"account\\model\\AccountModel.as"
+			],
+			[
+				"planemo",
+				"account\\model\\planes\\PlanesModel.as"
+			],
+			[
+				"shopsell",
+				"hangar\\shop\\view\\planes\\sell\\ShopSellPlaneManagement.as"
+			],
+			[
+				"rent",
+				"controls\\RentTime.as"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 296.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
