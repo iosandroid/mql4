@@ -12,7 +12,7 @@
 #define MAX_AMOUNTSYMBOLS 15
 #define MAX_POINTS 100000
 
-extern string SymbolsStr = "USDRUB, GBPUSD";
+extern string SymbolsStr = "EURUSD; GBPUSD";
 extern bool SymbolKoef = FALSE;
 extern bool Correlation = FALSE;
 extern int Depth = 1440;
@@ -519,10 +519,16 @@ void GetOptimalVector1( double& Vector[], int Iterations )
     Tmp = 0;
 
     for (j = 0; j < AmountSymbols; j++)
+    {
       if (CvarMatrix[i][j] < 0)
+      {
         Tmp -= CvarMatrix[i][j];
+      }
       else
+      {
         Tmp += CvarMatrix[i][j];
+      }
+    }
 
     if (Tmp > Max)
     {
@@ -833,7 +839,6 @@ double GetOptimalVector( double& Vector[], int Method, bool Correlation )
   }
 
   InvertMatrix(CvarMatrix);
-
   switch (Method)
   {
     case 1:
