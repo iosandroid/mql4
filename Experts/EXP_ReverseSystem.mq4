@@ -1,5 +1,5 @@
-#define MAINSEEK 148
-#define BARSIZE 44  // LONG_VALUE + 5 * DOUBLE_VALUE
+#define HEADER 148
+#define BARSIZE 60  //
 
 extern int Pips = 50;
 extern double Lots = 0.1;
@@ -7,36 +7,37 @@ extern double Lots = 0.1;
 int handle;
 bool MainError;
 
-int GetTime( int Pos )
+long GetTime( int Pos )
 {
-  int PosTime;
+  long PosTime;
   
-  FileSeek(handle, MAINSEEK + Pos, SEEK_SET);
-  PosTime = FileReadInteger(handle);
+  FileSeek(handle, HEADER + Pos, SEEK_SET);
+  PosTime = FileReadLong(handle);
 
+  //Print("PosTime: " + PosTime + " Open: " + FileReadDouble(handle) + " High: " + FileReadDouble(handle) + " Low: " + FileReadDouble(handle) + " Close: " + FileReadDouble(handle));
   return(PosTime);
 }
 
 bool FindTimePlace( int SearchTime )
 {
-  int LeftTime, RightTime, PosTime;
-  int Left, Right, Pos;
+  long LeftTime, RightTime, PosTime;
+  long Left, Right, Pos;
   
   Left = 0;
-  Right = FileSize(handle) - MAINSEEK - BARSIZE;
-  
+  Right = FileSize(handle) - HEADER - BARSIZE;
+
   LeftTime = GetTime(Left);
   RightTime = GetTime(Right);
   
   while ((LeftTime < SearchTime) && (SearchTime < RightTime))
-  {    
+  {
     Pos = (Left + Right) / 2;
     Pos -= Pos % BARSIZE;
     
     if (Pos == Left)
       break;
     
-    PosTime = GetTime(Pos);
+    PosTime = GetTime(Pos);    
     
     if (SearchTime >= PosTime)
     {
@@ -48,11 +49,11 @@ bool FindTimePlace( int SearchTime )
       Right = Pos;
       RightTime = GetTime(Right);
     }
-  }
+  }  
   
   if (SearchTime <= RightTime)
   {
-    FileSeek(handle, Left + MAINSEEK, SEEK_SET);
+    FileSeek(handle, Left + HEADER, SEEK_SET);
     return(TRUE);
   }
   else
@@ -61,21 +62,31 @@ bool FindTimePlace( int SearchTime )
 
 void init()
 {
-  handle = FileOpenHistory(Symbol() + Period() + ".hst", FILE_BIN|FILE_READ);
+  string filename = Symbol() + Period() + ".hst";
+  handle = FileOpen(filename, FILE_BIN|FILE_READ);
+  
+  Print(filename);
   
   if (handle > 0)
-    MainError = TRUE;
-  else
   {
+    Print("File: " + filename + " opened successfully.");
+    MainError = TRUE;
+  }
+  else
+  {    
+    Print("File: " + filename + " could not be opened: err: " + GetLastError());
     MainError = FALSE;
-    
+        
     return;
   }
 
   MainError = FindTimePlace(Time[0]);
   
   if (!MainError)
+  {
+    Print("FindTimePlace: error");
     FileClose(handle);
+  }
     
   return;
 }
@@ -88,34 +99,53 @@ void deinit()
   return;
 }
 
-bool GetPrices( int& PriceTime, int& PriceLow, int& PriceHigh)
+bool GetPrices( long& PriceTime, double& PriceLow, double& PriceHigh)
 {
-  PriceTime = FileReadInteger(handle);
-  FileSeek(handle, DOUBLE_VALUE, SEEK_CUR);
-  PriceLow = FileReadDouble(handle) / Point + 0.1;
-  PriceHigh = FileReadDouble(handle) / Point + 0.1;
-  FileSeek(handle, 2 * DOUBLE_VALUE, SEEK_CUR);
+  double PriceOpen;
+  double PriceClose;
+  long   PriceVolume;
+  int    PriceSpread;
+  long   PriceRealVolume;
 
+  PriceTime       = FileReadLong(handle); //read time  
+  PriceOpen       = FileReadDouble(handle);
+  PriceHigh       = FileReadDouble(handle) / Point + 0.1; // read high value
+  PriceLow        = FileReadDouble(handle) / Point + 0.1; // read low value  
+  PriceClose      = FileReadDouble(handle);
+  PriceVolume     = FileReadLong(handle);
+  PriceSpread     = FileReadInteger(handle);
+  PriceRealVolume = FileReadLong(handle);
+  
+  //Print("PriceTime: " + PriceTime + " PriceHigh: " + PriceHigh + " PriceLow: " + PriceLow);
+  
   if (FileTell(handle) + BARSIZE <= FileSize(handle))
+  {  
     return(TRUE);
+  }
   else
+  {    
     return(FALSE);
+  }
 }
 
-int GetTimeTrade()
+long GetTimeTrade()
 {
   static bool FlagUP = TRUE;
-  static int Min = 999999;
-  static int Max = 0;
-  static int NTime;
-  int ResTime;
+  static double Min = 999999;
+  static double Max = 0;
+  static long NTime;
+  long ResTime;
   
-  int PriceTime, PriceLow, PriceHigh;
+  long PriceTime;
+  double PriceLow, PriceHigh;
     
-  while (TRUE)
+  while (TRUE)  
   {
     if (!GetPrices(PriceTime, PriceLow, PriceHigh))
+    {
+      Print("Get prices failed.");
       return(-1);
+    }    
 
     if (FlagUP)
     {
@@ -192,18 +222,23 @@ int ReverseOrder( int Ticket)
 
 void System()
 {
-  static int Ticket = 0;
-  static int NewTime = 0;
+  static int  Ticket = 0;
+  static long NewTime = 0;
   
   if (NewTime < 0)
+  {
     return;
+  }
     
   if (Time[0] < NewTime)
+  {
     return;
+  }
 
   Ticket = ReverseOrder(Ticket);
   
   NewTime = GetTimeTrade();
+  Print("NextTime: " + NewTime);
   
   if (NewTime < 0)
     CloseOrder(Ticket);
@@ -212,7 +247,10 @@ void System()
 void start()
 {
   if (!MainError)
+  {
+    Print("!MainError");
     return;
+  }
 
   System();
     
