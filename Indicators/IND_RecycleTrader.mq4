@@ -28,7 +28,8 @@ double RecycleBuffer[];
 
 
 //-------------------------------------------------------------------------
-extern string SymbolBuffer = "GBPUSD; EURNOK; USDJPY; XBRUSD";
+//extern string SymbolBuffer = "GBPUSD; USDJPY; XBRUSD; USDTRY; USDSGD; XAGUSD; AUDCHF; EURUSD";
+extern string SymbolBuffer = "GBPUSD; USDJPY";
 extern int    WindowLength = 1440;
 
 //=========================================================================
@@ -63,6 +64,7 @@ public:
       {   
          calc_recycle_with_offset(i);
       }
+      //dump_to_file();
       
       return 1;
    }
@@ -74,10 +76,10 @@ public:
       
       if (InitFlag == 0)
       {
-         InitFlag = init(1166);
+         InitFlag = init(2166);
       }
       
-      if (PrevTime != Time[0])
+      if (PrevTime == Time[0])
       {        
          return;
       }
@@ -94,6 +96,18 @@ public:
          RecycleBuffer[p] = m_Data.m_Recycle[i];
       }      
       WindowRedraw();
+   }
+   
+   void dump_to_file()
+   {
+      string filename = "Recycle_on_" + Symbol() + ".csv";
+      
+      int handle = FileOpen(filename, FILE_WRITE|FILE_CSV);
+      for (int i = 0; i < m_Data.m_Index; i++)
+      {
+         FileWrite(handle, m_Data.m_Recycle[i]);
+      }
+      FileClose(handle);      
    }
    
 private:
@@ -680,14 +694,6 @@ void start()
 {
    RecycleObject.tick();
    RecycleObject.draw();
-   
-   //Print(Time[0], " ", iBarShift("EURUSD", Period(), Time[0]) );
-   //Print(Time[0], " ", iBarShift("GBPUSD", Period(), Time[0]) );
-   
-   //Print(Time[0], " ", iBarShift(Symbol(), Period(), Time[0]) );
-   //Print(Time[1], " ", iBarShift(Symbol(), Period(), Time[1]) );
-   //Print(Time[2], " ", iBarShift(Symbol(), Period(), Time[2]) );
-   //Print(Time[3], " ", iBarShift(Symbol(), Period(), Time[3]) );
 }
 
 //+------------------------------------------------------------------+

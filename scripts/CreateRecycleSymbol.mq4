@@ -3,7 +3,7 @@
 #define MAX_AMOUNTSYMBOLS 10
 #define MAX_POINTS 100000
 
-extern string SymbolsStr = "AUDUSD, EURUSD, GBPUSD, USDCHF, USDJPY, USDCAD";
+extern string SymbolsStr = "EURUSD, GBPUSD, USDCHF, USDJPY";
 extern string BaseCurrency = "USD";
 extern double PriceKoef = 10;
 extern datetime StartTime = D'2010.01.01';

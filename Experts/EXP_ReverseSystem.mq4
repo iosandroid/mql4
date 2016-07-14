@@ -117,7 +117,6 @@ bool GetPrices( long& PriceTime, double& PriceLow, double& PriceHigh)
   PriceRealVolume = FileReadLong(handle);
   
   //Print("PriceTime: " + PriceTime + " PriceHigh: " + PriceHigh + " PriceLow: " + PriceLow);
-  
   if (FileTell(handle) + BARSIZE <= FileSize(handle))
   {  
     return(TRUE);

@@ -192,7 +192,9 @@ void GetMeans( int Pos, int Len)
     for (j = Pos; j > Pos - Len; j--)
       Sum += BaseMatrix[i][j];
 
+    Print(Len);
     Means[i] = Sum / Len;
+    
   }
 
   return;
