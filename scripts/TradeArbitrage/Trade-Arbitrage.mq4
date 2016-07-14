@@ -338,6 +338,10 @@ void GetXTrade( string FileName )
   string Str1, Str2, Str3, Str[MAX_VARIANTPAIRS];
   
   handle = FileOpen(FileName, FILE_READ);
+  if (!handle)
+  {
+      Print("Unable to load Trade-Arbitrage.txt");
+  }
   
   while (!FileIsEnding(handle))
   {
@@ -346,6 +350,11 @@ void GetXTrade( string FileName )
   }
   
   FileClose(handle);
+  
+  if (AmountStrings > 0)
+  {
+    Print("Trade-Arbitrage.txt loaded");
+  }
   
   for (i = 0; i < AmountAllSymbols; i++)
   {
