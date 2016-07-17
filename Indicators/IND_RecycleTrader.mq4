@@ -44,7 +44,8 @@ public:
       , m_SymbolCount(0)
    {
       m_SymbolCount = ParseStringOfSymbols(symbols, ";", m_Symbols);
-      
+            
+      ArrayResize(m_Data.m_Weights,     m_SymbolCount);
       ArrayResize(m_Calc.m_PriceMatrix, m_SymbolCount);
       ArrayResize(m_Calc.m_AvgedMatrix, m_SymbolCount);
       ArrayResize(m_Calc.m_CovarMatrix, m_SymbolCount);      
@@ -52,6 +53,7 @@ public:
    
    ~Recycle()
    {
+      ArrayFree(m_Data.m_Weights);
       ArrayFree(m_Calc.m_PriceMatrix);
       ArrayFree(m_Calc.m_AvgedMatrix);
       ArrayFree(m_Calc.m_CovarMatrix);
@@ -60,11 +62,11 @@ public:
 public:
    int init(int barcount)
    {
-      for (int i = 0; i < barcount; i++)
+      for (int i = barcount-1; i >= 0; i--)
       {   
          calc_recycle_with_offset(i);
       }
-      //dump_to_file();
+      dump_to_file();
       
       return 1;
    }
@@ -76,7 +78,7 @@ public:
       
       if (InitFlag == 0)
       {
-         InitFlag = init(2166);
+         InitFlag = init(5760);
       }
       
       if (PrevTime == Time[0])
@@ -105,7 +107,15 @@ public:
       int handle = FileOpen(filename, FILE_WRITE|FILE_CSV);
       for (int i = 0; i < m_Data.m_Index; i++)
       {
-         FileWrite(handle, m_Data.m_Recycle[i]);
+         string record = m_Data.m_Time[i] + ";" + DoubleToString(m_Data.m_Recycle[i]) + ";";
+         for (int j = 0; j < m_SymbolCount; j++ )
+         {
+            int    time  = m_Data.m_Time[i];
+            double price = get_price(m_Symbols[j], time);
+         
+            record += m_Data.m_Weights[j][i] + ";" + DoubleToString(price) + ";";
+         }
+         FileWrite(handle, record);
       }
       FileClose(handle);      
    }
@@ -463,10 +473,17 @@ private:
    
    void calc_recycle()
    {
+      int i = 0;
       double recycle = 0;
-      for (int i = 0; i < m_SymbolCount; i++)
+      
+      for (i = 0; i < m_SymbolCount; i++)
       {
          recycle += m_Calc.m_AvgedMatrix[i][m_Calc.m_Dims-1] * m_Calc.m_Weights[i];
+      }
+      
+      for (i = 0; i < m_SymbolCount; i++)
+      {
+         m_Data.m_Weights[i][m_Data.m_Index] = m_Calc.m_Weights[i];
       }
       
       m_Data.m_Time[m_Data.m_Index]    = m_CurrTime;
