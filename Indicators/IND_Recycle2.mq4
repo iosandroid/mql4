@@ -12,7 +12,7 @@
 #define MAX_AMOUNTSYMBOLS 15
 #define MAX_POINTS 100000
 
-extern string SymbolsStr = "EURUSD; GBPUSD";
+extern string SymbolsStr = "EURUSD, #AUS200, #ESX50, #SPXm";
 extern bool SymbolKoef = FALSE;
 extern bool Correlation = FALSE;
 extern int Depth = 1440;
