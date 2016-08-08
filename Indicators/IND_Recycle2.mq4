@@ -13,7 +13,7 @@
 #define MAX_POINTS 100000
 
 //extern string SymbolsStr = "#AUS200, #ESX50, #SPXm, #FCHI, #GDAXIm, #NDXm";
-extern string SymbolsStr = "EURUSD, GBPJPY, NZDUSD, GBPUSD, EURCHF, AUDCHF";
+extern string SymbolsStr = "EURUSD, GBPJPY, NZDUSD, GBPUSD, EURCHF, AUDCHF, XAGUSD, XAUUSD, #AUS200, #ESX50";
 extern bool SymbolKoef = FALSE;
 extern bool Correlation = FALSE;
 extern int Depth = 1440;

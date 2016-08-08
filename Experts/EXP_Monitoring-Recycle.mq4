@@ -1,3 +1,4 @@
+//https://www.mql5.com/ru/code/9891
 #property show_inputs
 
 #import "user32.dll"
